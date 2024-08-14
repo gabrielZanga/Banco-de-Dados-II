@@ -1,0 +1,24 @@
+create database vendas;
+
+use vendas;
+
+create table produto(
+	codigo_produto int not null primary key auto_increment,
+    descricao_produto varchar(30),
+    preco_produto decimal(10.00)
+);
+
+create table nota_fical(
+	numero_nf int not null primary key auto_increment,
+    data_nf date,
+    valor_nf decimal(10.00)
+);
+    RENAME TABLE nota_fical to nota_fiscal;
+    
+create table itens(
+	produto_codigo_produto int not null primary key auto_increment,
+    nota_fiscal_numero_nf varchar(200),
+    num_item varchar(200),
+    qtde_item varchar(200)
+);
+
