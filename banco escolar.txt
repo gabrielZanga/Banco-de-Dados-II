@@ -1,0 +1,24 @@
+create database escola;
+
+use escola;
+
+create table curso(
+	id int not null primary key auto_increment,
+    curso varchar(90)
+);
+
+create table matricula(
+	id int not null primary key auto_increment,
+    numero_matricula varchar(10)
+);
+
+create table alunos(
+	id int not null primary key auto_increment,
+    nome varchar(60),
+    curso_id int not null,
+    matricula_id int not null,
+    foreign key(curso_id) references curso(id),
+    foreign key(matricula_id) references matricula(id) 
+);
+
+insert into matricula (numero_matricula) values("")
