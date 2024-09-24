@@ -1,0 +1,43 @@
+create database pizzaria;
+use pizzaria;
+
+create table cliente(
+cliente_id int not null,
+telefone varchar(15),
+nome varchar(30),
+logradouro varchar(30),
+numero decimal(5.0),
+complemento varchar(30),
+bairro varchar(30),
+referencia varchar(30),
+primary key (cliente_id)
+);
+
+create table pedido(
+pedido_id int not null,
+cliente_id int not null,
+dataa datetime,
+valor decimal(5.2),
+primary key (pedido_id),
+foreign key (cliente_id) references cliente(cliente_id)
+);
+
+create table pizza(
+pizza_id int not null,
+nome varchar(30),
+descricao varchar(30),
+valor decimal(4.2),
+primary key (pizza_id)
+);
+
+create table item_pedido(
+pedido_id int not null,
+pizza_id int not null,
+quantidade decimal(2.0),
+valor decimal(5.2),
+foreign key (pizza_id) references pizza(pizza_id),
+foreign key (pedido_id) references pedido(pedido_id)
+);
+
+
+
