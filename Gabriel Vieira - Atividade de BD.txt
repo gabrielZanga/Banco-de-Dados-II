@@ -1,0 +1,128 @@
+CREATE DATABASE atividade;
+
+USE atividade;
+
+
+CREATE TABLE amigos (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100),
+    idade INT NOT NULL,
+    aniversario DATE,
+    genero varchar(1) check(upper(genero)='M' or upper(genero)='F'),
+    celular VARCHAR(20)
+);
+
+CREATE TABLE clientes (
+    CPF BIGINT NOT NULL UNIQUE,
+    RG BIGINT NOT NULL UNIQUE,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    aniversario DATE NOT NULL,
+    celular VARCHAR(20),
+    estado CHAR(2),
+    cidade VARCHAR(100)
+);
+
+CREATE TABLE produtos (
+    IDPROD INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nomeproduto VARCHAR(100) NOT NULL,
+    validade DATE,
+    preco DECIMAL(12,2),
+    categoria VARCHAR(100),
+    estoque INT NOT NULL,
+    marca VARCHAR(100),
+    desconto DECIMAL(12,2),
+    fornecedor VARCHAR(100),
+    faixa_etaria VARCHAR(20)
+);
+
+/*2*/
+INSERT INTO AMIGOS (nome, idade, aniversario, genero, celular) VALUES
+('Ana Silva', 30, '1994-05-15', 'F', '(11) 98765-4321'),
+('Carlos Souza', 25, '1998-10-20', 'M', '(21) 91234-5678'),
+('Beatriz Oliveira', 28, '1996-03-10', 'F', '(31) 99876-5432');
+
+INSERT INTO CLIENTES (CPF, RG, aniversario, celular, estado, cidade) VALUES
+(53417263543, 98340143, '1985-07-12', '(11) 91234-5678', 'SP', 'São Paulo'),
+(98675469670, 09461748, '1990-02-23', '(21) 98765-4321', 'RJ', 'Rio de Janeiro'),
+(81420394123, 52738949, '1995-11-05', '(31) 99876-5432', 'MG', 'Belo Horizonte');
+
+INSERT INTO PRODUTOS (nomeproduto, validade, preco, categoria, estoque, marca, desconto, fornecedor, faixa_etaria) VALUES
+('Notebook XYZ', '2025-12-31', 2999.99, 'Eletrônicos', 50, 'TechBrand', 150.00, 'TechSuppliers', 'Adulto'),
+('Smartphone ABC', '2024-06-30', 1999.99, 'Eletrônicos', 100, 'PhoneMaker', 100.00, 'PhoneSuppliers', 'Adulto'),
+('Tênis de Corrida', '2026-03-15', 499.99, 'Roupas', 200, 'SportWear', 50.00, 'SportGoods', 'Todos');
+
+/*2, 3, 4 e 5 Eu não consegui fazer*/
+
+
+create table fornecedores (
+codfor int not null primary key auto_increment,
+nome varchar(100),
+fone varchar (20)
+);
+
+
+create table produto (
+codpro int not null primary key auto_increment,
+codfor int not null,
+produto varchar (100),
+preco decimal (12,2)
+);
+
+/*alter table produto add constraint fk_produto_fornecedores
+foreign key(codfor) references fornecedores(codfor);*/
+
+
+INSERT INTO fornecedores (nome, fone) VALUES
+('Fornecedor A', '1234-5678'),
+('Fornecedor B', '9876-5432');
+
+
+INSERT INTO produto (codfor, produto, preco) VALUES
+(1, 'celular', 99.99),
+(1, 'chip', 49.50),
+(2, 'chocolate', 29.75);
+
+
+INSERT INTO fornecedores (nome, fone) VALUES
+('Fornecedor C', '9876-5442');
+
+
+drop table fornecedores;
+
+
+create table estado (
+    codestado INT NOT NULL AUTO_INCREMENT unique, 
+    nome VARCHAR(100) NOT NULL,            
+    sigla CHAR(2) NOT NULL
+);
+
+
+
+create table cidade (
+ codcidade INT NOT NULL AUTO_INCREMENT unique, 
+    nome VARCHAR(100) NOT NULL,          
+    codestado INT NOT NULL   
+);
+
+alter table cidade add constraint fk_estado_cidade
+foreign key(codestado) references estado(codestado);
+
+
+create table pai(
+id int not null primary key auto_increment,
+seila varchar(255) default "porra",
+numero int check(numero = 2)
+);
+
+
+create table todasconstraint (
+ id int not null primary key auto_increment,
+ nome varchar (100),
+ idade int check(idade>=20),
+ pais varchar(40) default 'Brasil',
+ email varchar(100) unique,
+ idpai int not null
+);
+
+alter table todasconstraint add constraint fk_todas_pai
+foreign key(idpai) references todasconstraint(id);
