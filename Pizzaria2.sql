@@ -39,12 +39,12 @@ foreign key (pizza_id) references pizza(pizza_id),
 foreign key (pedido_id) references pedido(pedido_id)
 );
 
-insert into cliente(telefone,nome,logradouro,numero,bairro) values (1,'11 11111111','Gabriel Vieira','Rua Tobias de Aguiar','111','Centro');
-insert into cliente(telefone,nome,logradouro,numero,bairro) values (2,'22 22222222','Bruna Dantas','Rua das Rosas','222','Cantareira');
-insert into cliente(telefone,nome,logradouro,numero,bairro) values (3,'33 33333333','Carlos Vieira','Rua das Avencas','333','Bela Vista');
-insert into cliente(telefone,nome,logradouro,numero,bairro) values (4,'44 44444444','Julia Silva','Rua dos Cravos','444','Cantareira');
-insert into cliente(telefone,nome,logradouro,numero,bairro) values (5,'55 55555555','Mariana Silva','Rua das Acácias','555','Bela Vista');
-insert into cliente(telefone,nome,logradouro,numero,bairro) values (6,'66 66666666','Laura Madureira','Rua das Gardênias','666','Cantareira');
+insert into cliente(telefone,nome,logradouro,numero,bairro) values ('11 11111111','Gabriel Vieira','Rua Tobias de Aguiar','111','Centro');
+insert into cliente(telefone,nome,logradouro,numero,bairro) values ('22 22222222','Bruna Dantas','Rua das Rosas','222','Cantareira');
+insert into cliente(telefone,nome,logradouro,numero,bairro) values ('33 33333333','Carlos Vieira','Rua das Avencas','333','Bela Vista');
+insert into cliente(telefone,nome,logradouro,numero,bairro) values ('44 44444444','Julia Silva','Rua dos Cravos','444','Cantareira');
+insert into cliente(telefone,nome,logradouro,numero,bairro) values ('55 55555555','Mariana Silva','Rua das Acácias','555','Bela Vista');
+insert into cliente(telefone,nome,logradouro,numero,bairro) values ('66 66666666','Laura Madureira','Rua das Gardênias','666','Cantareira');
 
 insert into pedido(cliente_id,dataa,valor) values (1,'2016-12-15 20:30',32.00);
 insert into pedido(cliente_id,dataa,valor) values (2,'2016-12-15 20:38',40.00);
@@ -54,3 +54,19 @@ insert into pedido(cliente_id,dataa,valor) values (2,'2016-12-18 19:00',45.00);
 insert into pedido(cliente_id,dataa,valor) values (3,'2016-12-18 21:12',44.00);
 insert into pedido(cliente_id,dataa,valor) values (4,'2016-12-19 22:22',72.00);
 insert into pedido(cliente_id,dataa,valor) values (6,'2016-12-19 22:26',34.00);
+
+
+select * from pedido where dataa = (select min(dataa) from pedido);
+select * from pedido where dataa = (select max(dataa) from pedido);
+
+select * from pedido where valor = (select max(valor) from pedido);
+select * from pedido where valor = (select min(valor) from pedido);
+
+select nome from cliente order by nome asc;
+select nome from cliente order by nome desc;
+
+select upper(nome) from cliente;
+
+select sum(valor) from pedido where dataa like '2016-12-18%';
+
+select dataa from pedido where (select datediff(min(dataa), max(dataa)) from pedido);
