@@ -106,9 +106,11 @@ select dataa from pedido where (select datediff(min(dataa), max(dataa)) from ped
 select pizza_id, sum(quantidade) from item_pedido group by pizza_id;
 
 /*HAVING*/
+select pizza_id, sum(quantidade) from item_pedido group by pizza_id having sum(quantidade) > 2;
 
 /*DISTINCT*/
 select distinct telefone from cliente;
 
 /*UNION*/
+select bairro from cliente union select bairro from fornecedores;
 
