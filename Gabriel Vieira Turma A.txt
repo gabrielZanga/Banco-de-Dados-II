@@ -1,0 +1,28 @@
+1. Nvidia, Ayar Labs, AMD, Sansumg Semiconductor, Intel.
+
+Nvidia: IA, Games, Cidades inteligentes, Hardwares, Placas de Vídeo.
+Ayar Labs: IA, Sotware, Setores automobílisticos.
+AMD: IA, Focado na área de games, Processadores.
+Sansumg Semiconductor: SmartPhones, Notebooks, Tablets, 
+Intel: Processadores, IA, FGPAs, Software, Sistemas Relacionados
+
+2. Celulares SmartPhones, Televisão, Computador, Microôndas, Carros Elétricos
+Eles são ultilizados em quase todos os aparelhos eletrônicos, do mais simples até o mais complexos. Sistemas embarcados se tornaram cada vez mais importantes no dia a dia das pessoas. Mesmo que sua presença não seja percebida, eles estão embutidos em diversos aparelhos eletrônicos que utilizamos no nosso cotidiano, tais como: smartphones, smartwatches e diversos outros. Eles estão presentes em aplicações de diversas áreas tais como: a médica, veicular e outras.
+
+3. No domínio de sistemas embarcados, 50% dos problemas são detectados apenas após a entrega do produto. Contudo, grande parte dos problemas relatados não são relacionados a erros de programação do sistema, mas dizem respeito à requisitos inadequados. No processo de desenvolvimento de um sistema embarcado, várias questões devem ser levadas em consideração no que diz respeito ao tratamento dos Requisitos Não-Funcionais. Vários trabalhos relatam a dificuldade com a Elicitação e Especificação de Requisitos Não-funcionais para Sistemas Embarcados.
+
+4. MediaTek, Samsung e Apple.
+As futuras progeções são os própios sistemas embarcados, eles estão em tudo, aparelhos, eletrodomésticos.
+
+AUTO AVALIAÇÃO.
+
+1. Sistemas Embarcados são micro-computadores que fazem uma função x após receber um comando y, realizando alguma função específica.
+
+2. Arduíno são componentes didáticos para você aprender a funcionalidade de um sistema embarcado, controles remotos, celulares, Televisões, Relógios SmatWatch, Câmera de Segurança, Sistema de Alarme, Controle de Portão, Microôndas.
+
+3. O tamanho deles é reduzido comparado a um Hardware comvencional, geralmente eles tem funções específicas a serem executadas.
+
+4. Sim, como qualquer outra coisa o Sistema Embarcado, ele deve ser confiável, assim existem menos chances de ter uma falha no Sistema.
+
+5. Robo aspirador de casa, LavaLouças, Microôndas e etc.
+
